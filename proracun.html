@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="sr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Merriweather|Tangerine|Caveat" rel="stylesheet">
+    <!-- Bootstrap CSS
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Прорачун!</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="Pictures/logo3.png" width="90" height="60" class="d-inline-block align-top rounded" alt="M3Design"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Поставка задатка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Прорачун</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="modeli_crtezi.html">Моделирање и цртежи</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                Повезани Web site-ови
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://slobodan-iv.github.io/kompjuterska_grafika/">Компјутерска графика</a>
+                </li>
+                <li>
+                  <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Моделирање и симулација пом. рач.</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://slobodan-iv.github.io/konstruisanje/">Конструисање</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav><!-- navbar -->
+    <!-- container -->
+    <div class="container">
+      <!-- Content here -->
+      <div>
+        <h1>Прорачун ручног свлакача</h1>
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-12 col-md-11 col-lg-10">
+            <div class="accordion" id="proracun">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="n_vreteno">
+                  <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_n_vreteno" aria-expanded="true" aria-controls="collapse_n_vreteno">
+                    Налегања и прорачуни траверзе, подешених завртњева и навојног вретена
+                  </button>
+                </h2>
+                <div id="collapse_n_vreteno" class="accordion-collapse collapse show" aria-labelledby="n_vreteno" data-bs-parent="#proracun">
+                  <div class="accordion-body">
+                    <ul class="nav nav-tabs" id="proracun_Tab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="naleganja_i_traverza-tab" data-bs-toggle="tab" data-bs-target="#naleganja_i_traverza" type="button" role="tab" aria-controls="naleganja_i_traverza" aria-selected="true">Налегања и прорачун траверзе</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="podeseni_zavrtnjevi-tab" data-bs-toggle="tab" data-bs-target="#podeseni_zavrtnjevi" type="button" role="tab" aria-controls="podeseni_zavrtnjevi" aria-selected="false">Подешени завртњеви</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="zavrsni-tab" data-bs-toggle="tab" data-bs-target="#zavrsni" type="button" role="tab" aria-controls="zavrsni" aria-selected="false">Завршни прорачун навојног вретена</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane show active" id="naleganja_i_traverza" role="tabpanel" aria-labelledby="naleganja_i_traverza-tab">
+                        <h3>Налегање између ручице и навојног вретена</h3>
+                        <p>
+                          треба да је <strong>лако покретљиво</strong>, па се усваја налегање првог степена приоритета: <img src="Pictures/png/H8_f7.png" alt="H8/f7"> из Т 7.16
+                        </p>
+                        <div class="accordion" id="accordion_T7_16">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T7_16">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T7_16" aria-expanded="true" aria-controls="collapse_T7_16">
+                                Т7.16 - Преглед дозвољених налегања за општу употребу
+                              </button>
+                            </h2>
+                            <div id="collapse_T7_16" class="accordion-collapse collapse" aria-labelledby="heading_T7_16" data-bs-parent="#accordion_T7_16">
+                              <div class="accordion-body">
+                                <img src="Pictures/T7_16.jpg" width="100%" alt="T7.16">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          за пречник <strong>ручице</strong>: <img src="Pictures/png/dr_solo=.png" alt="dr="> 8 <img src="Pictures/png/mm.png" alt="mm"> дозвољена одступања су:
+                        </p>
+                        <p>
+                          За <strong>рупу</strong>: &empty;8 <img src="Pictures/png/H8.png" alt="H8"> 
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Ag=.png" alt="Ag="> 22 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ag=.png" alt="Ag="> 0.022 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Ad=.png" alt="Ad="> 0 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ad=.png" alt="Ad="> 0 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          За <strong>осовину</strong>: &empty;8 <img src="Pictures/png/f7.png" alt="f7"> 
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Ag=.png" alt="Ag="> -13 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ag=.png" alt="Ag="> -0.013 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Ad=.png" alt="Ad="> -28 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ad=.png" alt="Ad="> -0.028 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <h3>Налегање између навртке и траверзе</h3>
+                        <p>
+                          треба да је <strong>чврсто</strong>, па се усваја налегање првог степена приоритета, које се препоручује за чауре лежишта и главчина: <img src="Pictures/png/H7_r6.png" alt="H7/r6"> из Т 7.16
+                        </p>
+                        <p>
+                          за пречник <strong>навртке</strong>: <img src="Pictures/png/dn=.png" alt="dn="> 17 <img src="Pictures/png/mm.png" alt="mm"> дозвољена одступања су:
+                        </p>
+                        <p>
+                          За <strong>рупу</strong>: &empty;17 <img src="Pictures/png/H7.png" alt="H7"> 
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Ag=.png" alt="Ag="> 18 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ag=.png" alt="Ag="> 0.018 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Ad=.png" alt="Ad="> 0 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ad=.png" alt="Ad="> 0 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          За <strong>осовину</strong>: &empty;17 <img src="Pictures/png/r6.png" alt="r6"> 
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Ag=.png" alt="Ag="> 34 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ag=.png" alt="Ag="> 0.034 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Ad=.png" alt="Ad="> 23 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ad=.png" alt="Ad="> 0.023 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <div class="accordion" id="accordion_T1_4">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T1_4">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T1_4" aria-expanded="true" aria-controls="collapse_T1_4">
+                                Т 1.4
+                              </button>
+                            </h2>
+                            <div id="collapse_T1_4" class="accordion-collapse collapse" aria-labelledby="heading_T1_4" data-bs-parent="#accordion_T1_4">
+                              <div class="accordion-body">
+                                <img src="Pictures/T1_4_SOR_1.jpg" width="100%" alt="T1.4">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion" id="accordion_T1_4_nastavak">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T1_4_nastavak">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T1_4_nastavak" aria-expanded="true" aria-controls="collapse_T1_4_nastavak">
+                                Т 1.4 наставак
+                              </button>
+                            </h2>
+                            <div id="collapse_T1_4_nastavak" class="accordion-collapse collapse" aria-labelledby="heading_T1_4_nastavak" data-bs-parent="#accordion_T1_4_nastavak">
+                              <div class="accordion-body">
+                                <img src="Pictures/T1_4_SOR_2.jpg" width="100%" alt="T1.4">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion" id="accordion_T1_5">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T1_5">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T1_5" aria-expanded="true" aria-controls="collapse_T1_5">
+                                Т 1.5
+                              </button>
+                            </h2>
+                            <div id="collapse_T1_5" class="accordion-collapse collapse" aria-labelledby="heading_T1_5" data-bs-parent="#accordion_T1_5">
+                              <div class="accordion-body">
+                                <img src="Pictures/T1_5_SOS_1.jpg" width="100%" alt="T1.5">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion" id="accordion_T1_5_nastavak">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T1_5_nastavak">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T1_5_nastavak" aria-expanded="true" aria-controls="collapse_T1_5_nastavak">
+                                Т 1.5 наставак
+                              </button>
+                            </h2>
+                            <div id="collapse_T1_5_nastavak" class="accordion-collapse collapse" aria-labelledby="heading_T1_5_nastavak" data-bs-parent="#accordion_T1_5_nastavak">
+                              <div class="accordion-body">
+                                <img src="Pictures/T1_5_SOS_2.jpg" width="100%" alt="T1.5">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <h3>Траверза је изложена савијању:</h3>
+                        <p>
+                          <strong>Највећи момент</strong> савијања и <strong>најмања носећа површина</strong> је у пресеку А-А, на месту на коме је утиснута навртка.
+                        </p>
+                        <p>
+                          Пресек А-А приказан је упрошћено ради лакшег прорачуна. Мере пресека су:
+                        </p>
+                        <div class="accordion" id="postavka_rs">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="sema_rs">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_sema_rs" aria-expanded="true" aria-controls="collapse_sema_rs">
+                                Шема ручног свлакача
+                              </button>
+                            </h2>
+                            <div id="collapse_sema_rs" class="accordion-collapse collapse" aria-labelledby="sema_rs" data-bs-parent="#postavka_rs">
+                              <p>
+                                Карактеристичне величине - димензије ручног свлакача:
+                              </p>
+                              <div class="accordion-body">
+                                <img src="Pictures/Sema.jpg" width="100%" alt="Шема ручног свлакача">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <img src="Pictures/png/dn=.png" alt="dn="> 17 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/dt=.png" alt="dt="> 25 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/ht=.png" alt="ht="> 28 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          Највећи <strong>момент савијања</strong> у пресеку А-А је у треунтку крајњег положаја пипка на растојању: <img src="Pictures/png/krak.png" alt="l=lt/2-c/2"> од средишта траверзе и износи:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/M_A_A=.png" alt="M="> 459000  <img src="Pictures/png/Nmm.png" alt="Nmm">
+                        </p>
+                        <p>
+                          <strong>Аксијални отпорни момент инерције</strong> површине попречног пресека А-А износи: 
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Wx=.png" alt="Wx="> 1045.333 <img src="Pictures/png/mm3.png" alt="mm^3">
+                        </p>
+                        <p>
+                          <strong>Радни</strong> напон савијања:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/sigma_s=.png" alt="&sigma;s="> 439.094 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          Савијање у пресеку А-А има карактер једносмерно промењивог оптерећења, па је за прoверу степена сигурности меродавна трајна динамичка издржљивост на једносмерно промењиво оптерећење за <strong>Č.1530</strong> Т 2.3 М.Е.I
+                        </p>
+                        <div class="accordion" id="accordion_T2_3">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T2_3">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T2_3" aria-expanded="true" aria-controls="collapse_T2_3">
+                                Т2.3 - Механичке карактеристике
+                              </button>
+                            </h2>
+                            <div id="collapse_T2_3" class="accordion-collapse collapse" aria-labelledby="heading_T2_3" data-bs-parent="#accordion_T2_3">
+                              <div class="accordion-body">
+                                <img src="Pictures/T2_3.jpg" width="100%" alt="T2.3">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <img src="Pictures/png/sigma_D0=.png" alt="&sigma;D(0)="> 520 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>Степен сигурности</strong> пресека А-А износи:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/s_provera=.png" alt="S=&sigma;D(0)&sigma;s/="> 1.184
+                        </p>
+                        <p>
+                          Степен сигурности треба да је у <strong>границама 1.5 до 3</strong>, морамо на неки начин повећати аксијални отпорни момент инерције - повећавамо висину траверзе ( највећи утицај јер је трећи степен ):
+                        </p>
+                        <p>
+                          <img src="Pictures/png/ht=.png" alt="ht="> 35 <img src="Pictures/png/mm.png" alt="mm"> - <strong>меродавна</strong> за даљни прорачун
+                        </p>
+                        <p>
+                          <strong>поново</strong> рачунамо:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Wx=.png" alt="Wx="> 1633.333 <img src="Pictures/png/mm3.png" alt="mm^3">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/sigma_s=.png" alt="&sigma;s="> 281.0204 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/s_provera=.png" alt="S=&sigma;D(0)&sigma;s/="> 1.850 - што <strong>задовољава</strong>
+                        </p>
+                        <p>
+                          У <strong>случају</strong> да је <strong>степен сигурности</strong> био <strong>превелик</strong>, <strong>смањивали</strong> бисмо <strong>висину траверзе</strong>, водећи рачуна о потребној крутости конструкције. <strong>Не</strong> бисмо смели <strong>смањивати пречник траверзе и навртке</strong>: <img src="Pictures/png/dt_dn.png" alt="dt, dn"> јер би то <strong>утицало</strong> на носивост навоја навртке и <strong>на смањивање носивости</strong> чврстог налегања између <strong>навртке и траверзе</strong>!
+                        </p>
+                      </div>
+                      <div class="tab-pane" id="podeseni_zavrtnjevi" role="tabpanel" aria-labelledby="podeseni_zavrtnjevi-tab">
+                        <h3>
+                          Провера подешених завртњева
+                        </h3>
+                        <p>
+                          <strong>Веза пипка и обухватнице</strong> остварена је помоћу два подешена вијка. Два пресека вијка В-В изложена су смицању од силе <img src="Pictures/png/F_2.png" alt="F/2">.
+                        </p>
+                        <p>
+                          <strong>
+                            Напон смицања 
+                          </strong>:
+                          <img src="Pictures/png/tau_s_zavrtnja.png" alt="&tau;s">
+                        </p>
+                        <p>
+                          <strong>
+                            Број површина 
+                          </strong> смицања:
+                          <img src="Pictures/png/n=.png" alt="n="> 2
+                        </p>
+                        <p>
+                          Фактор <strong>неравномерности оптерећења</strong> појединих завртњева: <img src="Pictures/png/ksi_r=.png" alt="&xi;r="> 1.5 
+                        </p>
+                        <p>
+                          <strong>Пречник стабла завртња</strong>, непозната величина коју треба одредити: <img src="Pictures/png/dv=.png" alt="dv="> 7.244 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>
+                            Дозвољени напон смицања се рачуна 
+                          </strong>:
+                          <img src="Pictures/png/tau_sd_zavrtnja=.png" alt="&tau;sd="> 77.333 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <div class="accordion" id="accordion_T2_3_pz">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T2_3_pz">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T2_3_pz" aria-expanded="true" aria-controls="collapse_T2_3_pz">
+                                Т2.3 - Механичке карактеристике
+                              </button>
+                            </h2>
+                            <div id="collapse_T2_3_pz" class="accordion-collapse collapse" aria-labelledby="heading_T2_3_pz" data-bs-parent="#accordion_T2_3_pz">
+                              <div class="accordion-body">
+                                <img src="Pictures/T2_3.jpg" width="100%" alt="T2.3">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <strong>
+                            Из Т 2.3 М.Е.I за Č.0545 
+                          </strong>:
+                          <img src="Pictures/png/ReH=.png" alt="ReH="> 290 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <div class="accordion" id="accordion_T2_5_pz">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T2_5_pz">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T2_5_pz" aria-expanded="true" aria-controls="collapse_T2_5_pz">
+                                Т2.5 - Степен сигурности
+                              </button>
+                            </h2>
+                            <div id="collapse_T2_5_pz" class="accordion-collapse collapse" aria-labelledby="heading_T2_5_pz" data-bs-parent="#accordion_T2_5_pz">
+                              <div class="accordion-body">
+                                <img src="Pictures/T2_5.jpg" width="100%" alt="T2.5">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <strong>
+                            Степен сигурности 
+                          </strong>
+                          усвајамо из T2.5: <img src="Pictures/png/s_solo=.png" alt="S="> 3
+                        </p>
+                        <p>
+                          <strong>Усвајам пречник стабла завртња</strong>: <img src="Pictures/png/dv_solo=.png" alt="dv="> 9 <img src="Pictures/png/mm.png" alt="mm"> - Т 4.5 М.Е I за средњи груби квалитет (и Т 7.43), коме одговара пречник завртња - навој М8.
+                        </p>
+                        <div class="accordion" id="accordion_T4_5">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T4_5">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T4_5" aria-expanded="true" aria-controls="collapse_T4_5">
+                                Т4.5 - Мере завртњева и навртки
+                              </button>
+                            </h2>
+                            <div id="collapse_T4_5" class="accordion-collapse collapse" aria-labelledby="heading_T4_5" data-bs-parent="#accordion_T4_5">
+                              <div class="accordion-body">
+                                <img src="Pictures/T4_5.jpg" width="100%" alt="T4.5">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion" id="accordion_T7_43">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T7_43">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T7_43" aria-expanded="true" aria-controls="collapse_T7_43">
+                                Табела 7.43:
+                              </button>
+                            </h2>
+                            <div id="collapse_T7_43" class="accordion-collapse collapse" aria-labelledby="heading_T7_43" data-bs-parent="#accordion_T7_43">
+                              <div class="accordion-body">
+                                <img src="Pictures/T7_43.jpg" width="100%" alt="Табела 7.43">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <strong>
+                            висина подлошке: 
+                          </strong>
+                          <img src="Pictures/png/s=.png" alt="s="> 1.6 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <div class="accordion" id="accordion_T7_50">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T7_50">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T7_50" aria-expanded="true" aria-controls="collapse_T7_50">
+                                Табела 7.50:
+                              </button>
+                            </h2>
+                            <div id="collapse_T7_50" class="accordion-collapse collapse" aria-labelledby="heading_T7_50" data-bs-parent="#accordion_T7_50">
+                              <div class="accordion-body">
+                                <img src="Pictures/T7_50.jpg" width="100%" alt="Табела 7.50">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <strong>
+                            висина навртке: 
+                          </strong>
+                          <img src="Pictures/png/m=.png" alt="m="><img src="Pictures/png/h=.png" alt="h="> 6.5 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <div class="accordion" id="accordion_T7_48">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T7_48">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T7_48" aria-expanded="true" aria-controls="collapse_T7_48">
+                                Табела 7.48:
+                              </button>
+                            </h2>
+                            <div id="collapse_T7_48" class="accordion-collapse collapse" aria-labelledby="heading_T7_48" data-bs-parent="#accordion_T7_48">
+                              <div class="accordion-body">
+                                <img src="Pictures/T7_48.jpg" width="100%" alt="Табела 7.48">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <strong>Стандардна дужина завртња</strong>: <img src="Pictures/png/lst=.png" alt="lst="> 28 <img src="Pictures/png/mm.png" alt="mm"> - Т 7.43
+                        </p>
+                        <p>
+                          <strong>Дужина навоја</strong>: <img src="Pictures/png/bn=.png" alt="bn="> 14 <img src="Pictures/png/mm.png" alt="mm"> - Т 7.43
+                        </p>
+                        <p>
+                          Потребно је <strong>одузети дужину где почиње навој</strong> јер она не преноси оптерећење, па се добија за дужину стабла завртња без навоја ( реално могућу ):
+                        </p>
+                        <p>
+                          <strong>Дужина стабла без навоја</strong>: <img src="Pictures/png/l_stabla=.png" alt="l="> 12 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>Дебљина пипка</strong>: <img src="Pictures/png/b=.png" alt="b="> 6 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>
+                            Усваја се дебљина обухватница
+                          </strong>: <img src="Pictures/png/delta=.png" alt="&delta;="> 3.6 <img src="Pictures/png/mm.png" alt="mm"> тј. <img src="Pictures/png/delta_solo=.png" alt="&delta;="> 4 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          У пресеку 
+                          <strong>
+                            В-В постоје три површине додира
+                          </strong> <img src="Pictures/png/bi.png" alt="bi"> меродавна је најмања за прорачун, између вијка и дела обухватнице до навртке подешеног завртња! 
+                        </p>
+                        <p>
+                          <strong>Најмања дужина додира</strong>: <img src="Pictures/png/bi=.png" alt="bi="> 2 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <div class="accordion" id="postavka_rs_pz">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="sema_rs_pz">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_sema_rs_pz" aria-expanded="true" aria-controls="collapse_sema_rs_pz">
+                                Шема ручног свлакача
+                              </button>
+                            </h2>
+                            <div id="collapse_sema_rs_pz" class="accordion-collapse collapse" aria-labelledby="sema_rs_pz" data-bs-parent="#postavka_rs_pz">
+                              <p>
+                                Карактеристичне величине - димензије ручног свлакача:
+                              </p>
+                              <div class="accordion-body">
+                                <img src="Pictures/Sema.jpg" width="100%" alt="Шема ручног свлакача">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <strong>
+                            Површински притисак 
+                          </strong>
+                          између стабла завртња, вијка и обухватнице: 
+                        </p>
+                        <p>
+                          <img src="Pictures/png/p_pz=.png" alt="p="> 177.083 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>Број вијака</strong> на пипку: <img src="Pictures/png/n=.png" alt="n="> 2 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>
+                            Дозвољени површински притисак 
+                          </strong> између стабла, вијка и обухватнице:
+                          <img src="Pictures/png/pd_zavrtnja=.png" alt="pd="> 116 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          Како површински притисак <strong>незадовољава</strong> повећавамо дебљину пипка!
+                        </p>
+                        <p>
+                          <strong>Дебљина пипка</strong>: <img src="Pictures/png/b=.png" alt="b="> 10 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>
+                            Усваја се дебљина обухватница
+                          </strong>: <img src="Pictures/png/delta=.png" alt="&delta;="> 6 <img src="Pictures/png/mm.png" alt="mm"> тј. <img src="Pictures/png/delta_solo=.png" alt="&delta;="> 10 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>Стандардна дужина завртња</strong>: <img src="Pictures/png/lst=.png" alt="lst="> 40 <img src="Pictures/png/mm.png" alt="mm"> - Т 7.43
+                        </p>
+                        <p>
+                          <strong>Дужина навоја</strong>: <img src="Pictures/png/bn=.png" alt="bn="> 14 <img src="Pictures/png/mm.png" alt="mm"> - Т 7.43
+                        </p>
+                        <p>
+                          <strong>Дужина стабла без навоја</strong>: <img src="Pictures/png/l_stabla=.png" alt="l="> 24 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>Најмања дужина додира</strong>: <img src="Pictures/png/bi=.png" alt="bi="> 4 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>
+                            Површински притисак 
+                          </strong>
+                          између стабла завртња, вијка и обухватнице: 
+                        </p>
+                        <p>
+                          <img src="Pictures/png/p_pz=.png" alt="p="> 88.542 <img src="Pictures/png/N_mm2.png" alt="N/mm2"> - <strong>што задовољава</strong>!
+                        </p>
+                        <p>
+                          Како је 
+                          <strong>
+                            пречник описане кружнице 
+                          </strong> око главе завртња:
+                          <img src="Pictures/png/e=.png" alt="e="> 15 <img src="Pictures/png/mm.png" alt="mm"> - Т 7.43
+                        </p>
+                        <p>
+                          Усвајам 
+                          <strong>
+                            конструкциону димензију пипка
+                          </strong>: <img src="Pictures/png/a_pipka=.png" alt="a="> 16 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                      </div>
+                      <div class="tab-pane" id="zavrsni" role="tabpanel" aria-labelledby="zavrsni-tab">
+                        <h3>
+                          Провера степена сигурности навојног вретена на сложен напон
+                        </h3>
+                        <p>
+                          <strong>
+                            Момент увијања у навојном вретену (М.Е.I - покретни навојни спојеви) износи:
+                          </strong>
+                        </p>
+                        <p>
+                          <img src="Pictures/png/T=.png" alt="T="> 6571.309 <img src="Pictures/png/Nmm.png" alt="Nmm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Tv.png" alt="Tv"> Момент увијања потребан за покретање навојног вретена, да савлада трење у навојном споју!
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Tmi.png" alt="T&mu;"> Момент увијања потребан да савлада момент трења на додиру аксијалног рукавца и лежишта!
+                        </p>
+                        <p>
+                            Из књиге М.Е.I <strong>прочитати лекцију основе прорачуна</strong> машинских елемената!
+                        </p>
+                        <p>
+                            За <strong>покретне навојне спојеве</strong> користе се: трапезни и коси навој, приказани на слици испод:
+                        </p>
+                        <div class="accordion" id="accordion_Sl_4_6_7">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_Sl_4_6_7">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_Sl_4_6_7" aria-expanded="true" aria-controls="collapse_Sl_4_6_7">
+                                Слике поп. пресека трапезног и косог навоја
+                              </button>
+                            </h2>
+                            <div id="collapse_Sl_4_6_7" class="accordion-collapse collapse" aria-labelledby="heading_Sl_4_6_7" data-bs-parent="#accordion_Sl_4_6_7">
+                              <div class="accordion-body">
+                                <img src="Pictures/Sl_4_6_7.jpg" width="100%" alt="Слике навоја">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          Карактеристичне величине трапезног и косог навоја су приказане у табелама Т 4.3 и Т 4.4 испод:
+                        </p>
+                        <div class="accordion" id="accordion_T4_3">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T4_3">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T4_3" aria-expanded="true" aria-controls="collapse_T4_3">
+                                Т4.3 - трапезни навој
+                              </button>
+                            </h2>
+                            <div id="collapse_T4_3" class="accordion-collapse collapse" aria-labelledby="heading_T4_3" data-bs-parent="#accordion_T4_3">
+                              <div class="accordion-body">
+                                <img src="Pictures/T4_3.jpg" width="100%" alt="T4.3">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion" id="accordion_T4_4">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T4_4">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T4_4" aria-expanded="true" aria-controls="collapse_T4_4">
+                                Т4.4 - коси навој
+                              </button>
+                            </h2>
+                            <div id="collapse_T4_4" class="accordion-collapse collapse" aria-labelledby="heading_T4_4" data-bs-parent="#accordion_T4_4">
+                              <div class="accordion-body">
+                                <img src="Pictures/T4_4.jpg" width="100%" alt="T4.4">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                            По услову задатка задан је <strong>трапезни</strong> навој <img src="Pictures/png/Tr_12_3.png" alt="Tr 12x3"> JUS M.B0.062, па из Т 4.3 М.Е.I бирамо карактеристичне величине заданог навоја:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/A1=.png" alt="A1="><img src="Pictures/png/A3_solo=.png" alt="A3="> 57 <img src="Pictures/png/mm2.png" alt="mm2">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/d=.png" alt="d="> 12 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/d1_3=.png" alt="d1=d3="> 8.5 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/d2=.png" alt="d2="> 10.5 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/H1=.png" alt="H1="> 1.25 <img src="Pictures/png/mm.png" alt="mm"> Теоријска дубина ношења навојног споја М.Е.I
+                        </p>
+                        <p>
+                          <img src="Pictures/png/fi=.png" alt="&phi;="> 5.2 &deg; тј. <img src="Pictures/png/fi=.png" alt="&phi;="> 0.090757121 rad (због рада у Еxcelu)
+                        </p>
+                        <p>
+                          <img src="Pictures/png/alfa=.png" alt="&alpha;="> 30 &deg; тј. <img src="Pictures/png/alfa=.png" alt="&alpha;="> 0.523599 rad (због рада у Еxcelu)
+                        </p>
+                        <p>
+                          <img src="Pictures/png/tg_ro=.png" alt="tg&rho;="> 0.051764 <img src="Pictures/png/sledi.png" alt="одакле следи: "> <img src="Pictures/png/ro=.png" alt="&rho;="> 0.051718 rad <img src="Pictures/png/ro=.png" alt="&rho;="> 2.963203 &deg;
+                        </p>
+                        <p>
+                          <strong>
+                            Напомена:
+                          </strong>
+                          трапезни навој је симетричан, па се у последњем изразу користи <img src="Pictures/png/cos_alfa_2.png" alt="cos(&alpha;/2)">. Коси навој је несимтеричан, па се користи: <img src="Pictures/png/cos_alfa.png" alt="cos(&alpha;)">, конкретно: <img src="Pictures/png/cos_3_st.png" alt="cos(3&deg;)"> уместо: <img src="Pictures/png/cos_alfa_2.png" alt="cos(&alpha;/2)"> у последњем изразу.
+                        </p>
+                        <p>
+                          Коефицијент трења клизања за подмазане површине: <img src="Pictures/png/mi=.png" alt="&mu;="> 0.05
+                        </p>
+                        <p>
+                          <img src="Pictures/png/rm=.png" alt="rm="> 2 <img src="Pictures/png/mm.png" alt="mm"> - усвојени средњи полупречник додира шиљка и средишњег гнезда!
+                        </p>
+                        <p>
+                          Коефицијент трења на додиру шиљка и средишњег гнезда: 
+                          <img src="Pictures/png/mia=.png" alt="&mu;="> 0.01 (покретни навојни спојеви М.Е.I)
+                        </p>
+                        <p>
+                          <strong>
+                            Напон притиска:
+                          </strong>
+                          <img src="Pictures/png/sigma_p=.png" alt="Образац за површински притисак"> 149.123 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>
+                            Напон увијања:
+                          </strong>
+                          <img src="Pictures/png/tau_u=.png" alt="Образац за напон увијања"> 54.496 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>
+                            Поларни отпорни момент инерције пов. поп. пресека
+                          </strong> језгра навојног вретена се рачуна по обрасцу:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/wp=.png" alt="Wp="> 120.583 <img src="Pictures/png/mm3.png" alt="mm3"> - зашто се узима <img src="Pictures/png/d3_zasto.png" alt="d3">?
+                        </p>
+                        <p>
+                          <strong>
+                            Сложен напон:
+                          </strong>
+                          <img src="Pictures/png/sigma_i=.png" alt="&sigma;="> 162.832 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>
+                            Коефицијент свођења тангентног на нормалан напон:
+                          </strong>
+                          <img src="Pictures/png/alfa0=.png" alt="&alpha;0="> 1.2 (може се усвојити)
+                        </p>
+                        <p>
+                          <strong>
+                            Степен сигурности навојног вретена: 
+                          </strong>
+                          <img src="Pictures/png/s_nav_vr=.png" alt="S="> 1.781 <strong>незадовољава</strong> јер је минималан степен сигурности: <img src="Pictures/png/s_min=.png" alt="Smin="> 3 - <strong>Зашто?</strong>
+                        </p>
+                        <div class="accordion" id="accordion_T2_3_tr">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T2_3_tr">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T2_3_tr" aria-expanded="true" aria-controls="collapse_T2_3_tr">
+                                Т2.3 - Механичке карактеристике
+                              </button>
+                            </h2>
+                            <div id="collapse_T2_3_tr" class="accordion-collapse collapse" aria-labelledby="heading_T2_3_tr" data-bs-parent="#accordion_T2_3_tr">
+                              <div class="accordion-body">
+                                <img src="Pictures/T2_3.jpg" width="100%" alt="T2.3">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <img src="Pictures/png/ReH=.png" alt="Напон течења"> 290 <img src="Pictures/png/N_mm2.png" alt="N/mm2"> за Č.0545
+                        </p>
+                        <p>
+                          <strong>
+                            Степен сигурности незадовољава,
+                          </strong> принуђени смо узети већи трапезни навој:
+                        </p>
+                        <div class="accordion" id="accordion_T4_3x1">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T4_3x1">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T4_3x1" aria-expanded="true" aria-controls="collapse_T4_3x1">
+                                Т4.3 - трапезни навој
+                              </button>
+                            </h2>
+                            <div id="collapse_T4_3x1" class="accordion-collapse collapse" aria-labelledby="heading_T4_3x1" data-bs-parent="#accordion_T4_3x1">
+                              <div class="accordion-body">
+                                <img src="Pictures/T4_3.jpg" width="100%" alt="T4.3">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                            Усвајамо <strong>трапезни</strong> навој <img src="Pictures/png/Tr_18_4.png" alt="Tr 18x4"> JUS M.B0.062, па из Т 4.3 М.Е.I бирамо карактеристичне величине навоја:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/A1=.png" alt="A1="><img src="Pictures/png/A3_solo=.png" alt="A3="> 143 <img src="Pictures/png/mm2.png" alt="mm2">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/d=.png" alt="d="> 18 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/d1_3=.png" alt="d1=d3="> 13.5 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/d2=.png" alt="d2="> 16 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/H1=.png" alt="H1="> 1.75 <img src="Pictures/png/mm.png" alt="mm"> Теоријска дубина ношења навојног споја М.Е.I
+                        </p>
+                        <p>
+                          <img src="Pictures/png/fi=.png" alt="&phi;="> 4.57 &deg; тј. <img src="Pictures/png/fi=.png" alt="&phi;="> 0.079761547 rad (због рада у Еxcelu)
+                        </p>
+                        <p>
+                          <img src="Pictures/png/alfa=.png" alt="&alpha;="> 30 &deg; тј. <img src="Pictures/png/alfa=.png" alt="&alpha;="> 0.523599 rad (због рада у Еxcelu)
+                        </p>
+                        <p>
+                          <img src="Pictures/png/tg_ro=.png" alt="tg&rho;="> 0.051764 <img src="Pictures/png/sledi.png" alt="одакле следи: "> <img src="Pictures/png/ro=.png" alt="&rho;="> 0.051718 rad <img src="Pictures/png/ro=.png" alt="&rho;="> 2.963203 &deg;
+                        </p>
+                        <p>
+                          Коефицијент трења клизања за подмазане површине: <img src="Pictures/png/mi=.png" alt="&mu;="> 0.05
+                        </p>
+                        <p>
+                          <strong>
+                            Момент увијања у навојном вретену (М.Е.I - покретни навојни спојеви) износи:
+                          </strong>
+                        </p>
+                        <p>
+                          <img src="Pictures/png/T=.png" alt="T="> 9162.462 <img src="Pictures/png/Nmm.png" alt="Nmm">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/rm=.png" alt="rm="> 2 <img src="Pictures/png/mm.png" alt="mm"> - усвојени средњи полупречник додира шиљка и средишњег гнезда!
+                        </p>
+                        <p>
+                          Коефицијент трења на додиру шиљка и средишњег гнезда: 
+                          <img src="Pictures/png/mia=.png" alt="&mu;="> 0.01 (покретни навојни спојеви М.Е.I)
+                        </p>
+                        <p>
+                          <strong>
+                            Напон притиска:
+                          </strong>
+                          <img src="Pictures/png/sigma_p=.png" alt="Образац за површински притисак"> 59.441 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>
+                            Напон увијања:
+                          </strong>
+                          <img src="Pictures/png/tau_u=.png" alt="Образац за напон увијања"> 18.966 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>
+                            Поларни отпорни момент инерције пов. поп. пресека
+                          </strong> језгра навојног вретена се рачуна по обрасцу:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/wp=.png" alt="Wp="> 483.094 <img src="Pictures/png/mm3.png" alt="mm3"> - зашто се узима <img src="Pictures/png/d3_zasto.png" alt="d3">?
+                        </p>
+                        <p>
+                          <strong>
+                            Сложен напон:
+                          </strong>
+                          <img src="Pictures/png/sigma_i=.png" alt="&sigma;="> 63.649 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>
+                            Коефицијент свођења тангентног на нормалан напон:
+                          </strong>
+                          <img src="Pictures/png/alfa0=.png" alt="&alpha;0="> 1.2 (може се усвојити)
+                        </p>
+                        <p>
+                          <strong>
+                            Степен сигурности навојног вретена: 
+                          </strong>
+                          <img src="Pictures/png/s_nav_vr=.png" alt="S="> 4.556 <strong>задовољава</strong> јер је минималан степен сигурности: <img src="Pictures/png/s_min=.png" alt="Smin="> 3 - <strong>Зашто?</strong>
+                        </p>
+                        <p>
+                          <img src="Pictures/png/ReH=.png" alt="Напон течења"> 290 <img src="Pictures/png/N_mm2.png" alt="N/mm2"> за Č.0545
+                        </p>
+                        <h3>
+                          Провера површинског притиска у навојном споју
+                        </h3>
+                        <p>
+                          <strong>
+                            Површински притисак у навојном споју (М.Е.I - покретни навојни спојеви) износи:
+                          </strong>
+                        </p>
+                        <p>
+                          <img src="Pictures/png/p=.png" alt="p="> 14.316 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>
+                            Зашто 
+                          </strong>се површински притисак рачуна по наведеној једначини???
+                        </p>
+                        <p>
+                          Корак навоја: <img src="Pictures/png/p_korak=.png" alt="P="> 4 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          Висина навртке: <img src="Pictures/png/ln=.png" alt="ln="> 27 <img src="Pictures/png/mm.png" alt="mm"> (гледати да се добије цели број)
+                        </p>
+                        <p>
+                          Сада се <strong>мења</strong> и пречник навртке, који одређујемо из услова дозвољеног површинског притиска:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/dn_sqrt=.png" alt="dn="> 32.334 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>усвајам</strong>: <img src="Pictures/png/dn=.png" alt="dn="> 33.5 <img src="Pictures/png/mm.png" alt="mm"> - стандардни пречник навртке Т 0.1 М.Е.I!
+                        </p>
+                        <div class="accordion" id="accordion_T0_1_dn">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_T0_1_dn">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T0_1_dn" aria-expanded="true" aria-controls="collapse_T0_1_dn">
+                                Т0.1 - Стандардни бројеви
+                              </button>
+                            </h2>
+                            <div id="collapse_T0_1_dn" class="accordion-collapse collapse" aria-labelledby="heading_T0_1_dn" data-bs-parent="#accordion_T0_1_dn">
+                              <div class="accordion-body">
+                                <img src="Pictures/Standardni_brojevi.jpg" width="100%" alt="Стандардни бројеви">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          По поставци задатка ради се о навртци од бронзе за коју је дозвољени површински притисак: <img src="Pictures/png/Pd_cb.png" alt="Опсег вредности за дозвољени површински притисак">. Усвајам дозвољени површински притисак <img src="Pictures/png/Pd=.png" alt="Pd="> 15 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          Површински притисак задовољава јер је: <img src="Pictures/png/p_zadovoljava.png" alt="p<pd">
+                        </p>
+                        <p>
+                          <strong>Мењају</strong> се димензије траверзе, па усвајам спољашњи пречник траверзе:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/dt=.png" alt="dt="> 40 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>поново рачунамо:</strong>
+                        </p>
+                        <p>
+                          <img src="Pictures/png/Wx=.png" alt="Wx="> 1327.083 <img src="Pictures/png/mm3.png" alt="mm^3">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/sigma_s=.png" alt="&sigma;s="> 345.871 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <img src="Pictures/png/s_provera=.png" alt="S=&sigma;D(0)&sigma;s/="> 1.503 - што <strong>задовољава</strong>
+                        </p>
+                        <h3>
+                          Провера степена сигурности на извијање
+                        </h3>
+                        <p>
+                          Навојно вретено се проверава на извијање! За случај ручног свлакача ради се о <strong>четвртом</strong> случају извијања - греда обострано укљештена, за који је редукована дужина навојног вретена:
+                        </p>
+                        <div class="accordion" id="accordion_Sl_8_26">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_Sl_8_26">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_Sl_8_26" aria-expanded="true" aria-controls="collapse_Sl_8_26">
+                                Сл. 8.26 - Слободне дужине извијања
+                              </button>
+                            </h2>
+                            <div id="collapse_Sl_8_26" class="accordion-collapse collapse" aria-labelledby="heading_Sl_8_26" data-bs-parent="#accordion_Sl_8_26">
+                              <div class="accordion-body">
+                                <img src="Pictures/Sl8_26.jpg" width="100%" alt="Сл 8.26">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <strong>
+                            Редукована дужина навојног вретена: 
+                          </strong>
+                          <img src="Pictures/png/lr=.png" alt="lr="> 45 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>Минималан полупречник инерције</strong> за кружни попречни пресек се рачуна:
+                        </p>
+                        <p>
+                          <img src="Pictures/png/imin=.png" alt="imin="> 3.375 <img src="Pictures/png/mm.png" alt="mm">
+                        </p>
+                        <p>
+                          <strong>
+                            Виткост навојног вретена: 
+                          </strong>
+                          <img src="Pictures/png/lambda=.png" alt="&lambda;="> 13.333
+                        </p>
+                        <div class="accordion" id="accordion_Gr_vitkosti">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_Gr_vitkosti">
+                              <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_Gr_vitkosti" aria-expanded="true" aria-controls="collapse_Gr_vitkosti">
+                                Граничне вредности за виткост
+                              </button>
+                            </h2>
+                            <div id="collapse_Gr_vitkosti" class="accordion-collapse collapse" aria-labelledby="heading_Gr_vitkosti" data-bs-parent="#accordion_Gr_vitkosti">
+                              <div class="accordion-body">
+                                <img src="Pictures/Gr_vitkosti.jpg" width="100%" alt="Граничне вредности за виткост">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <strong>
+                            Ако је израчуната виткост: 
+                          </strong>
+                          <img src="Pictures/png/lambda.png" alt="&lambda;"> мања од граничне виткости <img src="Pictures/png/lambda0.png" alt="&lambda;0"> (<img src="Pictures/png/lambda.png" alt="&lambda;"> < <img src="Pictures/png/lambda0.png" alt="&lambda;0">), критичан напон за случај извијања се рачуна по Тет Мајеровој једначини (зависно од материјала):
+                        </p>
+                        <ol>
+                          <li>
+                            <strong>
+                              Меки челици: <img src="Pictures/png/sigma_k_mc.png" alt="Израз за критичан напон">
+                            </strong>
+                          </li>
+                          <li>
+                            <strong>
+                              Полутврди челици: <img src="Pictures/png/sigma_k_ptc.png" alt="Израз за критичан напон">
+                            </strong>
+                          </li>
+                          <li>
+                            <strong>
+                              Тврди, врло тврди и легирани челици: <img src="Pictures/png/sigma_k_tc.png" alt="Израз за критичан напон">
+                            </strong>
+                          </li>
+                        </ol>
+                        <p>
+                          <strong>
+                            Ако је израчуната виткост: 
+                          </strong>
+                          <img src="Pictures/png/lambda.png" alt="&lambda;"> већа од граничне виткости <img src="Pictures/png/lambda0.png" alt="&lambda;0"> (<img src="Pictures/png/lambda.png" alt="&lambda;"> > <img src="Pictures/png/lambda0.png" alt="&lambda;0">), критичан напон за случај извијања се рачуна по Ојлеровој једначини: <img src="Pictures/png/sigma_k_Ojler.png" alt="Израз за критичан напон">
+                        </p>
+                        <p>
+                          У нашем случају за Č.1530 <img src="Pictures/png/lambda0=.png" alt="&lambda;0="> 89, а израчуната виткост <img src="Pictures/png/lambda_solo=.png" alt="&lambda;="> 13.333
+                        </p>
+                        <p>
+                          <img src="Pictures/png/lambda.png" alt="&lambda;"> < <img src="Pictures/png/lambda0.png" alt="&lambda;0"> па се критичан напон рачуна по Тет Мајеровој једначини: <img src="Pictures/png/sigma_k_tc=.png" alt="Израз за критичан напон"> 326.733 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                        </p>
+                        <p>
+                          <strong>
+                            Степен сигурности на извијање: 
+                          </strong>
+                          <img src="Pictures/png/s_izv=.png" alt="однос критичног напона и напона притиска"> 5.497 задовољава јер је минималан степен сигурности за случај извијања: <img src="Pictures/png/s_min=.png" alt="Smin="> 4
+                        </p>
+                        <p>
+                          <strong>
+                            Напомена: 
+                          </strong>
+                          У случају да нам било који израчунати степен сигурности или површински притисак нису у предвиђеним тј. дозвољеним границама морали бисмо усвојити следећи већи пречник навоја, поново израчунати <strong>Т</strong>, проверити све остале степене сигурности и површински притисак, тако постепено повећавати - усвајати следећи већи пречник навоја рачунати степене сиг. и пов. притисак све док ст. сигурности и површински притисак не буду у предвиђеним границама!
+                        </p>
+                        <p>
+                          Усвојени навој који задовољи све степене сигурности и површински притисак је меродаван за даљи прорачун и конструкцију ручне дизалице!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="rucica">
+                  <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_rucica" aria-expanded="true" aria-controls="collapse_rucica">
+                    Прорачун ручице
+                  </button>
+                </h2>
+                <div id="collapse_rucica" class="accordion-collapse collapse" aria-labelledby="rucica" data-bs-parent="#proracun">
+                  <div class="accordion-body">
+                    <p>
+                      По поставци задатка ручним свлакачем рукује <strong>један радник</strong>, па је коефицијент неравномерности оптерећења: <img src="Pictures/png/k=.png" alt="k="> 0.8, као што је и задано!
+                    </p>
+                    <p>
+                      Број радника: <img src="Pictures/png/n=.png" alt="n="> 1 (<img src="Pictures/png/k=.png" alt="k="> 1)
+                    </p>
+                    <p>
+                      <strong>Један радник</strong> остварује момент увијања: 
+                    </p>
+                    <p>
+                      <img src="Pictures/png/T=.png" alt="T="> 9162.462 <img src="Pictures/png/Nmm.png" alt="Nmm"> ручном силом која је за просечног радника: <img src="Pictures/png/Fr=.png" alt="Fr="> 150 <img src="Pictures/png/N.png" alt="N">
+                    </p>
+                    <p>
+                      Усвајам <strong>
+                        пречник главе навојног вретена: 
+                      </strong>
+                      <img src="Pictures/png/dg=.png" alt="dg="> 27 <img src="Pictures/png/mm.png" alt="mm">
+                    </p>
+                    <p>
+                      <strong>
+                        Крак силе: 
+                      </strong>
+                      <img src="Pictures/png/L1=.png" alt="L1="> 61.083 <img src="Pictures/png/mm.png" alt="mm">
+                    </p>
+                    <p>
+                      <strong>Узимајући у обзир</strong> дужину навоја за кугле: &asymp; 20 <img src="Pictures/png/mm.png" alt="mm">, као и део ручице који се налази у глави ручног свлакача, укупна дужина ручице износи: 
+                    </p>
+                    <p>
+                      <img src="Pictures/png/lrucice=.png" alt="lr="> 128.083 <img src="Pictures/png/mm.png" alt="mm">
+                    </p>
+                    <p>
+                      <strong>
+                        Усвајам дужину: 
+                      </strong>
+                      <img src="Pictures/png/lr_solo=.png" alt="lr="> 150 <img src="Pictures/png/mm.png" alt="mm">
+                    </p>
+                    <p>
+                      <strong>
+                        Ручица је оптерећена на савијање: 
+                      </strong>
+                    </p>
+                    <p>
+                      <img src="Pictures/png/sigma_s.png" alt="Напон савијања"> .............. (2)
+                    </p>
+                    <p>
+                      <strong>
+                        Момент савијања: 
+                      </strong>
+                      <img src="Pictures/png/Ms=.png" alt="Ms="> 9162.462 <img src="Pictures/png/Nmm.png" alt="Nmm">
+                    </p>
+                    <p>
+                      <strong>
+                        Дозвољени напон: 
+                      </strong>
+                      <img src="Pictures/png/sigma_sd=.png" alt="&sigma;sd="> 116.667 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                    </p>
+                    <p>
+                      <strong>
+                        Трајна динамичка чврстоћа на једносмерно промењиво оптерећење 
+                      </strong>
+                      се усваја за материјал ручице: Č.0545 из T 2.3 M.E.I:
+                    </p>
+                    <p>
+                      <img src="Pictures/png/sigma_D0=.png" alt="&sigma;D(0)="> 350 <img src="Pictures/png/N_mm2.png" alt="N/mm2">
+                    </p>
+                    <div class="accordion" id="accordion_T2_3_dr">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_T2_3_dr">
+                          <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T2_3_dr" aria-expanded="true" aria-controls="collapse_T2_3_dr">
+                            Т2.3 - Механичке карактеристике
+                          </button>
+                        </h2>
+                        <div id="collapse_T2_3_dr" class="accordion-collapse collapse" aria-labelledby="heading_T2_3_dr" data-bs-parent="#accordion_T2_3_dr">
+                          <div class="accordion-body">
+                            <img src="Pictures/T2_3.jpg" width="100%" alt="T2.3">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <strong>Зашто</strong> је ручица оптерећена на савијање, динамички са једносмерном променом напона? - ( М.Е. I основе прорачуна маш. елем.)
+                    </p>
+                    <div class="accordion" id="accordion_T2_5_dr">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_T2_5_dr">
+                          <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T2_5_dr" aria-expanded="true" aria-controls="collapse_T2_5_dr">
+                            Т2.5 - Степен сигурности
+                          </button>
+                        </h2>
+                        <div id="collapse_T2_5_dr" class="accordion-collapse collapse" aria-labelledby="heading_T2_5_dr" data-bs-parent="#accordion_T2_5_dr">
+                          <div class="accordion-body">
+                            <img src="Pictures/T2_5.jpg" width="100%" alt="T2.5">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <strong>
+                        Т 2.5 М.Е.I
+                      </strong>
+                       степен сигурности: <img src="Pictures/png/s_solo=.png" alt="S="> 3 (зашто?)
+                    </p>
+                    <p>
+                      <strong>
+                        У једначини (2)
+                      </strong> се користи: аксијални отпорни момент површине попречног пресека (отпорност материјала) <strong>који се рачуна по обрасцу</strong>:
+                    </p>
+                    <p>
+                      <img src="Pictures/png/w.png" alt="Израз за w">  .............. (3)
+                    </p>
+                    <p>
+                      <strong>
+                        Уврштавајући 
+                      </strong>
+                      једначину (3) у једначину (2) добијамо израз за пречник ручице: 
+                    </p>
+                    <p>
+                      <img src="Pictures/png/dr=.png" alt="dr="> 9.283 <img src="Pictures/png/mm.png" alt="mm">
+                    </p>
+                    <div class="accordion" id="accordion_T0_1">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_T0_1">
+                          <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T0_1" aria-expanded="true" aria-controls="collapse_T0_1">
+                            Т0.1 - Стандардни бројеви
+                          </button>
+                        </h2>
+                        <div id="collapse_T0_1" class="accordion-collapse collapse" aria-labelledby="heading_T0_1" data-bs-parent="#accordion_T0_1">
+                          <div class="accordion-body">
+                            <img src="Pictures/Standardni_brojevi.jpg" width="100%" alt="Стандардни бројеви">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <strong>
+                        Из Т 0.1 М.Е.I
+                      </strong>
+                       усваја се <strong>"први" већи</strong> стандардни пречник ручице: <img src="Pictures/png/dr_solo=.png" alt="dr="> 10 <img src="Pictures/png/mm.png" alt="mm">
+                    </p>
+                    <p>
+                      Како смо променили димензије навртке и ручице у односу на задане, <strong>поново</strong> одређујемо налегање!
+                    </p>
+                    <h3>Налегање између ручице и навојног вретена</h3>
+                      <p>
+                        треба да је <strong>лако покретљиво</strong>, па се усваја налегање првог степена приоритета: <img src="Pictures/png/H8_f7.png" alt="H8/f7"> из Т 7.16
+                      </p>
+                      <div class="accordion" id="accordion_T7_16x1">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="heading_T7_16x1">
+                            <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T7_16x1" aria-expanded="true" aria-controls="collapse_T7_16x1">
+                              Т7.16 - Преглед дозвољених налегања за општу употребу
+                            </button>
+                          </h2>
+                          <div id="collapse_T7_16x1" class="accordion-collapse collapse" aria-labelledby="heading_T7_16x1" data-bs-parent="#accordion_T7_16x1">
+                            <div class="accordion-body">
+                              <img src="Pictures/T7_16.jpg" width="100%" alt="T7.16">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <p>
+                        за пречник <strong>ручице</strong>: <img src="Pictures/png/dr_solo=.png" alt="dr="> 10 <img src="Pictures/png/mm.png" alt="mm"> дозвољена одступања су:
+                      </p>
+                      <p>
+                        За <strong>рупу</strong>: &empty;10 <img src="Pictures/png/H8.png" alt="H8"> 
+                      </p>
+                      <p>
+                        <img src="Pictures/png/Ag=.png" alt="Ag="> 22 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ag=.png" alt="Ag="> 0.022 <img src="Pictures/png/mm.png" alt="mm">
+                      </p>
+                      <p>
+                        <img src="Pictures/png/Ad=.png" alt="Ad="> 0 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ad=.png" alt="Ad="> 0 <img src="Pictures/png/mm.png" alt="mm">
+                      </p>
+                      <p>
+                        За <strong>осовину</strong>: &empty;10 <img src="Pictures/png/f7.png" alt="f7"> 
+                      </p>
+                      <p>
+                        <img src="Pictures/png/Ag=.png" alt="Ag="> -13 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ag=.png" alt="Ag="> -0.013 <img src="Pictures/png/mm.png" alt="mm">
+                      </p>
+                      <p>
+                        <img src="Pictures/png/Ad=.png" alt="Ad="> -28 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ad=.png" alt="Ad="> -0.028 <img src="Pictures/png/mm.png" alt="mm">
+                      </p>
+                      <h3>Налегање између навртке и траверзе</h3>
+                      <p>
+                        треба да је <strong>чврсто</strong>, па се усваја налегање првог степена приоритета, које се препоручује за чауре лежишта и главчина: <img src="Pictures/png/H7_r6.png" alt="H7/r6"> из Т 7.16
+                      </p>
+                      <p>
+                        за пречник <strong>навртке</strong>: <img src="Pictures/png/dn=.png" alt="dn="> 33.5 <img src="Pictures/png/mm.png" alt="mm"> дозвољена одступања су:
+                      </p>
+                      <p>
+                        За <strong>рупу</strong>: &empty;33.5 <img src="Pictures/png/H7.png" alt="H7"> 
+                      </p>
+                      <p>
+                        <img src="Pictures/png/Ag=.png" alt="Ag="> 25 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ag=.png" alt="Ag="> 0.025 <img src="Pictures/png/mm.png" alt="mm">
+                      </p>
+                      <p>
+                        <img src="Pictures/png/Ad=.png" alt="Ad="> 0 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ad=.png" alt="Ad="> 0 <img src="Pictures/png/mm.png" alt="mm">
+                      </p>
+                      <p>
+                        За <strong>осовину</strong>: &empty;33.5 <img src="Pictures/png/r6.png" alt="r6"> 
+                      </p>
+                      <p>
+                        <img src="Pictures/png/Ag=.png" alt="Ag="> 50 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ag=.png" alt="Ag="> 0.050 <img src="Pictures/png/mm.png" alt="mm">
+                      </p>
+                      <p>
+                        <img src="Pictures/png/Ad=.png" alt="Ad="> 34 <img src="Pictures/png/mi_m.png" alt="&mu;m"> тј. <img src="Pictures/png/Ad=.png" alt="Ad="> 0.034 <img src="Pictures/png/mm.png" alt="mm">
+                      </p>
+                      <div class="accordion" id="accordion_T1_4x1">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="heading_T1_4x1">
+                            <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T1_4x1" aria-expanded="true" aria-controls="collapse_T1_4x1">
+                              Т 1.4
+                            </button>
+                          </h2>
+                          <div id="collapse_T1_4x1" class="accordion-collapse collapse" aria-labelledby="heading_T1_4x1" data-bs-parent="#accordion_T1_4x1">
+                            <div class="accordion-body">
+                              <img src="Pictures/T1_4_SOR_1.jpg" width="100%" alt="T1.4">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion" id="accordion_T1_4_nastavakx1">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="heading_T1_4_nastavakx1">
+                            <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T1_4_nastavakx1" aria-expanded="true" aria-controls="collapse_T1_4_nastavakx1">
+                              Т 1.4 наставак
+                            </button>
+                          </h2>
+                          <div id="collapse_T1_4_nastavakx1" class="accordion-collapse collapse" aria-labelledby="heading_T1_4_nastavakx1" data-bs-parent="#accordion_T1_4_nastavakx1">
+                            <div class="accordion-body">
+                              <img src="Pictures/T1_4_SOR_2.jpg" width="100%" alt="T1.4">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion" id="accordion_T1_5x1">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="heading_T1_5x1">
+                            <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T1_5x1" aria-expanded="true" aria-controls="collapse_T1_5x1">
+                              Т 1.5
+                            </button>
+                          </h2>
+                          <div id="collapse_T1_5x1" class="accordion-collapse collapse" aria-labelledby="heading_T1_5x1" data-bs-parent="#accordion_T1_5x1">
+                            <div class="accordion-body">
+                              <img src="Pictures/T1_5_SOS_1.jpg" width="100%" alt="T1.5">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion" id="accordion_T1_5_nastavakx1">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="heading_T1_5_nastavakx1">
+                            <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_T1_5_nastavakx1" aria-expanded="true" aria-controls="collapse_T1_5_nastavakx1">
+                              Т 1.5 наставак
+                            </button>
+                          </h2>
+                          <div id="collapse_T1_5_nastavakx1" class="accordion-collapse collapse" aria-labelledby="heading_T1_5_nastavakx1" data-bs-parent="#accordion_T1_5_nastavakx1">
+                            <div class="accordion-body">
+                              <img src="Pictures/T1_5_SOS_2.jpg" width="100%" alt="T1.5">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="tehnicki_opis">
+                  <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_tehnicki_opis" aria-expanded="true" aria-controls="collapse_tehnicki_opis">
+                    Технички опис
+                  </button>
+                </h2>
+                <div id="collapse_tehnicki_opis" class="accordion-collapse collapse" aria-labelledby="tehnicki_opis" data-bs-parent="#proracun">
+                  <div class="accordion-body">
+                    <p>
+                      <strong>
+                        Ручни свлакач
+                      </strong>: се користи за раздвајање стезних спојева. Пипцима 4 обухвата се спољни део стезног споја и навојним паром се врши демонтажа споја. 
+                    </p>
+                    <div class="accordion" id="postavka_to">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="sema_to">
+                          <button class="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_sema_to" aria-expanded="true" aria-controls="collapse_sema_to">
+                            Шема ручног свлакача
+                          </button>
+                        </h2>
+                        <div id="collapse_sema_to" class="accordion-collapse collapse" aria-labelledby="sema_to" data-bs-parent="#postavka_to">
+                          <p>
+                            Карактеристичне величине - димензије ручног свлакача:
+                          </p>
+                          <div class="accordion-body">
+                            <img src="Pictures/Sema.jpg" width="100%" alt="Шема ручног свлакача">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Услед <strong>отпора клизању</strong> који који се јавља у стезном споју, пипци, навојно вретено и навојни спој изложени су дејству силе <img src="Pictures/png/F.png" alt="F"> која је једнака овом отпору. С обзиром да се на спољни део делује силом помоћу два пипка, то је сила на једном од њих једнака половини укупне силе.
+                    </p>
+                    <p>
+                      Силе у <strong>пипцима</strong> преносе се на попречну траверзу 3 и у њеним попречним пресецима изазивају савијање, чији напон је највећи на средини траверзе, у пресеку А-А, и то кад су пипци у свом крајњем положају на растојању од пресека А-А: <img src="Pictures/png/krak.png" alt="l=lt/2-c/2"> овај пресек је опасан и на њему се проверава <strong>напон савијања</strong>!
+                    </p>
+                    <p>
+                      <strong>Завршетак навојног вретена</strong> трпи велики површински притисак због мале додирне површине шиљка и чеоне површине дела са кога се раздваја машински део. Да би се повећао радни век, односно број операција свлачења, шиљак се обично поставља у чеони завршетак навојног вретена, на начин приказан на детаљу А.
+                    </p>
+                    <p>
+                      Тако се постиже да <strong>шиљак мирује</strong>, чиме му се продужава радни век. Осим тога шиљак се може израдити од квалитетног челика, који након каљења може имати високу површинску чврстоћу.
+                    </p>
+                    <p>
+                      <strong>Пипци</strong> могу бити израђени из једног дела или из посебних обухватница које се помоћу подешених вијака спајају са пипцима.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <nav class="card-header" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">&copy; Slobodan Ivković</li>
+                  <li class="breadcrumb-item"><a href="https://www.linkedin.com/in/slobodan-ivkovic-a08326ba"><img src="Pictures/Icons/linkedin.png" alt="linkedin logo"></a></li>
+                  <li class="breadcrumb-item"><a href="https://twitter.com/slobodan_iv"><img src="Pictures/Icons/twitter.png" alt="twitter logo"></a></li>
+                  <li class="breadcrumb-item"><a href="https://www.youtube.com/user/Mickijedini"><img src="Pictures/Icons/youtube.png" alt="youtube logo"></a></li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- container -->
+
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>-->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
